@@ -6,24 +6,37 @@ A teaching guide exploring the principles of effective prompting—and what it r
 
 ## Contents
 
-1. [Why We Must Relearn How to Ask](#why-we-must-relearn-how-to-ask)
-2. [What a Large Language Model Is Actually Doing](#what-a-large-language-model-is-actually-doing)
-3. [Questions Are Not Neutral](#questions-are-not-neutral)
-4. [Why Precise Questioning Matters](#why-precise-questioning-matters)
-5. [Grammar and Clarity](#grammar-and-clarity)
-6. [Semantic Precision](#semantic-precision)
-7. [Embeddings and Representation](#embeddings-and-representation)
+1. [Why We Use Large Language Models](#why-we-use-large-language-models)
+2. [Why We Must Relearn How to Ask](#why-we-must-relearn-how-to-ask)
+3. [What a Large Language Model Is Actually Doing](#what-a-large-language-model-is-actually-doing)
+4. [The Three Fundamental Directions](#the-three-fundamental-directions)
+5. [Questions Are Not Neutral](#questions-are-not-neutral)
+6. [What Makes a Good Prompt](#what-makes-a-good-prompt)
+7. [Language Quality: Grammar, Semantics, and Representation](#language-quality-grammar-semantics-and-representation)
 8. [Hallucination: A Shared Problem](#hallucination-a-shared-problem)
 9. [Responsible Use](#responsible-use)
-10. [A Layered Approach to Prompting](#a-layered-approach-to-prompting)
-11. [Real-World Examples](#real-world-examples)
-12. [Conclusion: Prompting as Self-Discipline](#conclusion-prompting-as-self-discipline)
+10. [Domain Tools and the Routing Dimension](#domain-tools-and-the-routing-dimension)
+11. [Prompting as Iteration](#prompting-as-iteration)
+12. [Real-World Examples](#real-world-examples)
+13. [Conclusion: Asking a Model Trains You](#conclusion-asking-a-model-trains-you)
+
+---
+
+## Why We Use Large Language Models
+
+We use large language models because they can **understand and generate natural language**—dramatically lowering the barrier between humans and computers. Traditional software requires structured input and predefined workflows. A language model accepts the ambiguity and complexity of everyday human expression and works with it directly.
+
+This makes LLMs useful for a wide range of tasks: information retrieval, content generation, knowledge summarization, and decision support. They can also integrate information scattered across disparate sources and present it in coherent, readable form.
+
+When combined with external tools and domain-specific systems, LLMs go further still. They can not only *answer questions* but *complete tasks*—becoming a **universal interface that connects human intent to complex systems**. The prompt, in this context, is not just a search query. It is an instruction to an intelligent agent capable of reasoning, routing, and acting on your behalf.
+
+This is what makes the quality of your prompts matter so much: the interface is expressive enough to handle almost anything you can say, but that expressiveness also means that what you say—and how you say it—shapes everything that follows.
 
 ---
 
 ## Why We Must Relearn How to Ask
 
-Today, more and more people are turning to large language models as work assistants, learning companions, even a kind of "extended mind." They ask it to help understand the news, analyze economies, revisit history, organize ideas, generate text, and offer advice. A question emerges that looks deceptively simple: **How, exactly, should we ask?**
+Today, more and more people are turning to large language models as work assistants, learning companions, even a kind of "super brain." They ask it to help understand the news, analyze economies, revisit history, organize ideas, generate text, and offer advice. A question emerges that looks deceptively simple: **How, exactly, should we ask?**
 
 On the surface, this seems like a Prompt Engineering problem—can we just write better, more detailed, more "professional" prompts? But on closer reflection, it is not only technical. **It is first a question of language, then a question of knowledge, and finally a question of responsibility.**
 
@@ -56,6 +69,59 @@ Understanding this gap is crucial because it protects you from a subtle form of 
 
 ---
 
+## The Three Fundamental Directions
+
+### The Universal Logic of Human Inquiry
+
+Human inquiry about complex systems follows a universal logic that transcends domain boundaries. Whether investigating a patient's condition, a machine's failure, or a market's behavior, humans ask the same fundamental questions in the same sequence.
+
+These three categories are not arbitrary divisions. They reflect the natural progression of how knowledge accumulates and how wisdom unfolds:
+
+1. **Understanding** precedes **prediction**
+2. **Prediction** informs **action**
+3. **Action** creates new phenomena to understand
+
+Together, they form a cycle of knowledge, reflection, and intervention—the rhythm through which human engagement with any complex system deepens over time.
+
+Good prompting is not about stacking more words. It is about knowing **what type of question you are actually asking**, and which phase of this cycle you are in.
+
+### Direction 1: Retrospective (What Has Happened)
+
+*What information is relatively stable and verifiable? What actually happened? What do we already know?*
+
+The retrospective lens is about **establishing ground truth**. Before we can predict the future or prescribe action, we must understand what we know about the present and past. This is the foundation of all reasoning—the empirical bedrock upon which confidence is built. Retrospective questions ask: "What does the evidence tell us?" They are acts of epistemological humility: acknowledging what we can verify and distinguishing it from what we must infer.
+
+### Direction 2: Predictive (What Might Happen)
+
+*If conditions continue, what different outcomes might emerge? What patterns can we project forward?*
+
+The predictive lens extends knowledge into the future through **informed inference**. Prediction is not about achieving certainty—it is about quantifying uncertainty and identifying trajectories. It reflects the human desire to anticipate, to prepare, to shift from reactive to proactive. Predictive questions acknowledge that the future is shaped by patterns already observed; they are acts of pattern recognition extended through time.
+
+### Direction 3: Normative / Prescriptive (What Should Be Done)
+
+*Given different goals and constraints, what should be done? What actions would be optimal?*
+
+The prescriptive lens is about **translating knowledge into will**. It is where understanding meets responsibility. Prescriptive questions do not merely ask what is true or what will happen—they ask what *should* happen given our values, constraints, and goals. This is the realm of decision, judgment, and agency. These questions acknowledge that multiple futures are possible, and our choices shape which one unfolds.
+
+### Why Separation Matters
+
+Many people write prompts by stuffing in everything at once—facts, opinions, predictions, and recommendations all tangled together. Length is not the problem. **Mixing directions is the problem.**
+
+For example, the temptation is to ask:
+
+> "Tell me whether this policy is good or bad, whether it will fail, and whether the media is biased—and explain it all."
+
+This conflates retrospective facts, explanatory analysis, predictive reasoning, and value judgments. Better to separate:
+
+1. **Retrospective**: What are the main contents of this policy?
+2. **Explanatory**: What are the core arguments from supporters and critics?
+3. **Predictive**: What different outcomes might emerge short-term and long-term?
+4. **Normative**: Under what value standard would someone consider it a success or failure?
+
+**The discipline is to separate them**—not because the model requires it, but because *you* require it to think clearly.
+
+---
+
 ## Questions Are Not Neutral
 
 Not all questions are of the same kind. The same topic can be approached at different levels:
@@ -79,16 +145,6 @@ Not all questions are of the same kind. The same topic can be approached at diff
 
 **A mature questioner first knows what they're actually asking for: facts, explanation, prediction, or advice.**
 
-### Three Fundamental Directions
-
-Though all appear to be "asking questions," questions operate at fundamentally different levels. At minimum, three directions exist:
-
-- **Retrospective questions**: What has happened? What do we already know?
-- **Predictive questions**: What might happen next?
-- **Normative (prescriptive) questions**: What should we do?
-
-These three directions are related, but they are not the same. They each demand different kinds of evidence, different logic, different tone, and different response forms. When mixed together in a single prompt, a language model will often produce something fluent but incoherent.
-
 ### The Ontology of Inquiry
 
 Questions are not neutral because language itself is not neutral. Every question you ask carries embedded assumptions about:
@@ -103,67 +159,69 @@ The discipline of careful questioning is thus a discipline of **making visible w
 
 ---
 
-## Why Precise Questioning Matters
+## What Makes a Good Prompt
 
-Many assume good prompting means writing longer, more elaborate requests.
+A prompt is more than a sentence—it is a structured communicative act. Understanding the three directions gives us a framework for what a well-formed prompt actually needs to specify.
 
-It does not. A good prompt is **clearer, not longer; more precise, not more ornate.**
+### The Anatomy of a Well-Formed Prompt
 
-Precise questioning includes:
+A good prompt typically carries:
 
-1. **Identifying question type** – fact, explanation, prediction, or advice?
-2. **Limiting scope** – which region, period, dataset, person, or timeframe?
-3. **Stating the goal** – understanding a concept or making a decision?
-4. **Specifying constraints** – which sources, standards, or perspectives?
-5. **Separating layers** – don't mix facts, opinions, predictions, and value judgments in one sentence
+1. **Direction** — Is this retrospective, predictive, or prescriptive? Knowing this shapes everything else.
+2. **Subject** — What entity, system, or domain is being analyzed? Be specific: not "the economy" but "US manufacturing employment from 2018–2023."
+3. **Scope and constraints** — Which time range, location, dataset, or standard applies? Constraints reduce the answer-space and anchor the response.
+4. **Goal** — Are you trying to understand, decide, or act? The same facts mean different things depending on what you will do with them.
+5. **Expected form of answer** — What would a good response look like? A list? A probability? A ranked set of options? A summary with sources?
+6. **Routing target** (where relevant) — Which system, database, or tool should ideally provide this answer? More on this in the Domain Tools section.
 
-The purpose is not to make the model obedient, but to **reduce misunderstanding, guesswork, and semantic drift.**
+### Deterministic vs. Open-Ended
+
+One further distinction matters: **is there a single correct answer, or are multiple valid responses possible?**
+
+- **Deterministic prompts** have a verifiable answer: "What was the GDP growth rate in 2022?" You can check whether the response is correct.
+- **Open-ended prompts** admit multiple valid answers: "What should we do about slow growth?" Validity here is judged by the quality of reasoning, not factual accuracy.
+
+Knowing which type you're dealing with changes how you evaluate the response—and how much you should push back.
+
+### The Difference a Prompt Makes
+
+| Weak | Strong |
+|---|---|
+| "Is this policy fair?" | "Does this policy distribute costs and benefits equally across income groups?" |
+| "Will the market crash?" | "What leading indicators historically preceded recessions, and which are currently elevated?" |
+| "What should I do?" | "Given a 10-year horizon and moderate risk tolerance, what portfolio adjustments have historically performed well in high-inflation environments?" |
+
+The weak versions are not wrong—they are underdetermined. They leave the model to guess what you mean by "fair," "crash," or "should."
 
 ---
 
-## Grammar and Clarity
+## Language Quality: Grammar, Semantics, and Representation
 
-Grammar is not decoration. It encodes relationships:
+### Grammar Is Not Decoration
+
+Grammar encodes relationships:
 
 - Who is doing what
 - Which condition limits which conclusion
 - What is causal, contrastive, or hypothetical
 - What is central vs. merely contextual
 
-**When grammar is unclear, the model must infer missing information.** The more it guesses, the more likely it produces something linguistically plausible but misaligned with your intent.
+**When grammar is unclear, the model must infer missing structure.** The more it guesses, the more likely it produces something linguistically plausible but misaligned with your intent.
 
-A complete, precise, well-structured prompt is not "more elegant"—it provides the model with more reliable task constraints. One principle worth holding onto:
+One principle worth holding onto:
 
 > **Grammar determines relationships. Semantics determines boundaries. Structure determines the path of reasoning.**
 
-A prompt riddled with grammatical gaps, vague concepts, and logical leaps essentially pushes the model toward guessing. The more it fills in blanks, the higher the probability of hallucination.
-
-### Why this matters in training
-
-It would be oversimplified to say models were trained only on grammatically correct text. More accurately:
-
-- High-quality pretraining data tends to include more readable, well-formed text
-- But training data also contains colloquial, noisy, and imperfect language
-- Still, models learn their most stable syntactic and discourse patterns from relatively well-formed text
-
-**Grammar matters not because models refuse imperfect language, but because clearer expression aligns better with the stable patterns they've learned.**
-
----
-
-## Semantic Precision
+### Semantic Precision
 
 Many words appear universally understood but lack clear boundaries:
 
 - freedom, fairness, failure, crisis
 - conservative, radical, effective, reliable
 
-These appear everywhere—politics, economics, history, daily conversation—but their meaning is **highly context-dependent.**
+These appear everywhere—politics, economics, history, daily conversation—but their meaning is **highly context-dependent.** When you ask whether a policy is "fair" or a measure is "effective," the model must guess which standard you mean. It fills the gap with probabilistic guesses.
 
-### Vague words expand the answer-space
-
-If you ask whether a policy is "fair," a measure is "effective," or a figure was "bad," the model must guess which standard you mean. It fills the gap with probabilistic guesses.
-
-### Better: unpack abstract terms
+Better: **unpack abstract terms into measurable questions.**
 
 Instead of:
 > Is this policy fair?
@@ -173,29 +231,15 @@ Ask:
 - Who bears the costs and who reaps the benefits?
 - Is it legally equal or outcome-equal?
 
-Instead of:
-> Is it effective?
+### Embeddings and Why Vagueness Compounds
 
-Ask:
-- Does it achieve what the policy statement claims?
-- Short-term or long-term effectiveness?
-- Does it create new unintended consequences?
+A modern language model maps words, phrases, and contexts into high-dimensional vector space—a **distributed representation learned from how expressions occur across many contexts.**
 
-**The clearer the terms, the easier the answer becomes to test, compare, and discuss.**
-
----
-
-## Embeddings and Representation
-
-A modern language model maps words, phrases, and contexts into high-dimensional vector space. This is not a dictionary definition but a **distributed representation learned from how expressions occur across many contexts.**
-
-### How this relates to clarity
-
-Semantically related expressions cluster closer in representation space—"inflation," "rising prices," and "cost of living pressure" may be nearby. But closeness is not identity. The same word shifts meaning across contexts.
+Semantically related expressions cluster closer in representation space—"inflation," "rising prices," and "cost of living pressure" may be nearby. But closeness is not identity.
 
 **Vague terms activate a broad semantic neighborhood rather than a tightly bounded meaning.** When you use ambiguous words, the model may activate many related but inconsistent regions, causing it to follow common templates rather than target your intent precisely.
 
-**Embeddings don't "cause" ambiguity, but they help explain why semantically vague prompts are harder to anchor.**
+Embeddings don't "cause" ambiguity, but they help explain why semantically vague prompts are harder to anchor—and why precision in language compounds into precision in responses.
 
 ---
 
@@ -211,19 +255,19 @@ If your question is poorly defined, evidence is insufficient, or semantic bounda
 
 Consider:
 
-- "Summarize the truth about today's political situation"—but no credible sources are provided. The question itself is already ill-defined.
+- "Summarize the truth about today's political situation"—no credible sources are provided; the question is already ill-defined.
 - "Is this politician a complete liar?"—you've compressed complex facts into a moral verdict.
 - "Will the economy definitely collapse in three months?"—you're demanding certainty from an uncertain system.
 
 In each case, even if the model responds fluently, it may simply be following the implicit suggestions in your language to generate a seemingly coherent narrative. **The real danger is not only that models hallucinate—it's that people are willing to accept hallucinations that confirm their existing beliefs.**
 
-### The Deeper Truth About Hallucination
+### A Shared Human Vulnerability
 
 Hallucination reveals something uncomfortable: **humans and language models share the same fundamental vulnerability.** When we encounter ambiguous, underdetermined questions, humans also confabulate—we fill gaps with what is culturally typical, emotionally resonant, or narratively satisfying, often without realizing we are doing so.
 
 The machine's hallucination is more visible, more often exposed, more measurable. But it is not fundamentally different in kind from human reasoning in the presence of incomplete information.
 
-This is why learning to prompt well is, paradoxically, also learning to think better as a human. The discipline of precision that you impose on your prompts is the same discipline that shields your own thinking from unconscious bias and unexamined assumption.
+This is why learning to prompt well is, paradoxically, also learning to think better as a human.
 
 ---
 
@@ -248,92 +292,98 @@ Responsible use requires the opposite posture: **taking fuller responsibility fo
 
 ---
 
-## A Layered Approach to Prompting: The Three Fundamental Directions
+## Domain Tools and the Routing Dimension
 
-### The Universal Logic of Human Inquiry
+### The Limits of the Model Alone
 
-Human inquiry about complex systems follows a universal logic that transcends domain boundaries. Whether investigating a patient's condition, a machine's failure, or a market's behavior, humans ask the same fundamental questions in the same sequence.
+Because a model's internal knowledge has limits—and because internet information itself can be incomplete or biased—relying solely on what a model generates, or on simple web retrieval, is often insufficient to guarantee accuracy and reliability.
 
-The three categories below are not arbitrary divisions. They reflect the natural progression of how knowledge accumulates and how wisdom unfolds:
+This is where **domain-specific tools and systems** become essential complements. Specialized databases, computation engines, sensor feeds, and application APIs can provide:
+- **Authoritative data** grounded in specific domains
+- **Precise calculations** beyond statistical pattern-matching
+- **Direct access** to live systems and records
 
-1. **Understanding** precedes **prediction**
-2. **Prediction** informs **action**
-3. **Action** creates new phenomena to understand
+### The Three Directions Map to Different Tools
 
-Together, they form a cycle of knowledge, reflection, and intervention—the rhythm through which human engagement with any complex system deepens over time.
+The routing dimension makes the three-direction framework operationally meaningful, not just intellectually tidy:
 
-Good prompting is not about stacking more words. It is about knowing **what type of question you are actually asking**, and which phase of this cycle you are in.
+| Direction | What it needs | Typical tools |
+|---|---|---|
+| Retrospective | Verifiable facts, historical records | Databases, document stores, sensor archives, APIs |
+| Predictive | Pattern analysis, trend projection | Forecasting models, statistical engines, time-series tools |
+| Prescriptive | Constraint-aware optimization | Recommendation engines, optimization solvers, planning systems |
 
-Break complex questions into a disciplined sequence:
+In modern LLM systems with tool use and multi-agent architectures, a well-formed prompt doesn't just ask a question—it **routes itself** to the right system. A retrospective query about sensor readings should go to a data store, not rely on model memory. A predictive query should invoke a forecasting model. A prescriptive query should consult a system that knows operational constraints.
 
-### Layer 1: Retrospective (What Has Happened)
-What information is relatively stable and verifiable? What actually happened? What do we already know?  
-*Standard: Correspondence to observable reality*
+**A well-formed prompt, then, is not only a well-structured question—it is a question directed to the right tool.** Knowing what kind of answer you need (and who or what can actually provide it) is as important as knowing how to ask.
 
-The retrospective lens is about **establishing ground truth**. Before we can predict the future or prescribe action, we must understand what we know about the present and past. This is the foundation of all reasoning—the empirical bedrock upon which confidence is built. Retrospective questions ask: "What does the evidence tell us?" They are acts of epistemological humility: acknowledging what we can verify and distinguishing it from what we must infer.
+---
 
-### Layer 2: Predictive (What Might Happen)
-If conditions continue, what different outcomes might emerge? What patterns can we project forward?  
-*Standard: Consistency with historical patterns and causal logic*
+## Prompting as Iteration
 
-The predictive lens extends knowledge into the future through **informed inference**. Prediction is not about achieving certainty—it is about quantifying uncertainty and identifying trajectories. It reflects the human desire to anticipate, to prepare, to shift from reactive to proactive. Predictive questions acknowledge that the future is shaped by patterns already observed; they are acts of pattern recognition extended through time.
+Good prompting is rarely a single act. It is a **dialogue**—a sequence of exchanges in which each response reveals what the model understood, what it missed, and where to push next.
 
-### Layer 3: Normative / Prescriptive (What Should Be Done)
-Given different goals and constraints, what should be done? What actions would be optimal?  
-*Standard: Alignment with values, feasibility, and desired outcomes*
+### Reading the First Response
 
-The prescriptive lens is about **translating knowledge into will**. It is where understanding meets responsibility. Prescriptive questions do not merely ask what is true or what will happen—they ask what *should* happen given our values, constraints, and goals. This is the realm of decision, judgment, and agency. These questions acknowledge that multiple futures are possible, and our choices shape which one unfolds.
+The first response tells you as much about your prompt as about the topic:
 
-### Why Separation Matters
+- If the answer mixes directions (e.g., gives advice when you asked for facts), your prompt was underspecified
+- If the answer is too generic, your scope was too broad
+- If the answer confidently states something uncertain, your framing invited overconfidence
+- If the answer is exactly what you asked but not what you needed, your goal was unclear
 
-Many people write prompts by stuffing in everything at once—facts, opinions, predictions, and recommendations all tangled together. Length is not the problem. **Mixing layers is the problem.**
+### Strategies for Follow-Up
 
-For example, in political news, the temptation is to ask:
+**Decompose**: If the response mixed layers, break it into separate follow-ups. Ask the retrospective question first, then the predictive, then the prescriptive.
 
-> "Tell me whether this policy is good or bad, whether it will fail, and whether the media is biased—and explain it all."
+**Narrow**: If the answer is too broad, add constraints. "You described general trends—now focus on X specifically under conditions Y."
 
-This conflates retrospective facts, explanatory analysis, predictive reasoning, and value judgments. Better to separate:
+**Challenge**: Push back on confident claims. "You said X—what's the evidence for that?" or "What would change if the opposite were true?"
 
-1. **Retrospective**: What are the main contents of this policy?
-2. **Explanatory**: What are the core arguments from supporters and critics?
-3. **Predictive**: What different outcomes might emerge short-term and long-term?
-4. **Normative**: Under what value standard would someone consider it a success or failure?
+**Reframe**: If the response answered the wrong question, restate what you actually needed. "I wasn't asking about A; I was asking about B given C."
 
-**The discipline is to separate them**—not because the model requires it, but because *you* require it to think clearly. Language models simply make the confusion visible when it happens.
+**Escalate specificity**: "Give me three concrete examples" or "Quantify this where possible."
+
+### Iteration Is Not Failure
+
+Needing multiple exchanges is not a sign of a bad prompt—it is the normal process of inquiry. Even human experts rarely answer complex questions correctly on the first attempt without back-and-forth. What matters is that each exchange moves toward greater precision, not that you got it right immediately.
+
+**The goal of iteration is progressive grounding**: each round eliminates ambiguity, confirms the model is on track, and deepens the answer toward what you actually need.
 
 ---
 
 ## Real-World Examples
 
 ### Politics
+
 **Weak prompt:**
 > Has this policy completely failed? Is the media just manipulating the narrative?
 
-**Better prompt:**
-1. What are the main contents of the policy?
-2. What are the core arguments from supporters and critics?
-3. What public data or reporting supports each side?
-4. How might it be judged under different standards—short-term public opinion, long-term fiscal impact, legal feasibility?
+**Better — separated by direction:**
+1. *(Retrospective)* What are the main contents of the policy and its implementation record?
+2. *(Explanatory)* What are the core arguments from supporters and critics, and what evidence does each cite?
+3. *(Predictive)* What different outcomes might emerge under different conditions over the next two years?
+4. *(Normative)* Under what value standard—fiscal efficiency, social equity, legal feasibility—would it be judged a success or failure?
 
 ### Economics
+
 **Weak prompt:**
 > The economy is so bad, should I sell all my stocks?
 
-**Better prompt:**
-1. What indicators show economic slowdown?
-2. Are these indicators consistent or contradictory?
-3. What different market outcomes occurred in historically similar conditions?
-4. What do different risk tolerances imply for this situation?
+**Better — separated by direction:**
+1. *(Retrospective)* What indicators currently show economic slowdown, and are they consistent or contradictory?
+2. *(Predictive)* What different market outcomes occurred in historically similar conditions?
+3. *(Normative)* For different risk tolerances and time horizons, what adjustments have historically been defensible?
 
 ### History
+
 **Weak prompt:**
 > Was this historical figure good or bad?
 
-**Better prompt:**
-1. What facts about this person are relatively uncontested?
-2. Where do different historical interpretations disagree?
-3. What sources and value premises does each rely on?
-4. Why do modern people judge past figures by today's standards?
+**Better — separated by direction:**
+1. *(Retrospective)* What facts about this person are relatively uncontested across historians?
+2. *(Explanatory)* Where do different historical interpretations diverge, and what sources does each rely on?
+3. *(Normative)* What value premises underlie each interpretation, and why do modern standards of judgment differ from those of the period?
 
 ---
 
@@ -346,9 +396,9 @@ A mature questioner should be able to ask themselves:
 - Do I want facts, explanations, or recommendations right now?
 - Is there a reliable source this question can be anchored to?
 - Is my question itself carrying hidden biases?
-- Have I mixed multiple layers of inquiry into one sentence?
+- Have I mixed multiple directions of inquiry into one sentence?
 - Is my language clear enough for another intelligence to genuinely understand my intent?
-- Am I prepared to keep asking, rather than accepting the first answer that sounds right?
+- Am I prepared to iterate—to refine, challenge, and follow up—rather than accept the first answer that sounds right?
 
 **A language model is not an oracle, a judge, or a shortcut that replaces thinking.**
 
