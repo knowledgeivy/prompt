@@ -83,6 +83,14 @@ These three categories are not arbitrary divisions. They reflect the natural pro
 
 Together, they form a cycle of knowledge, reflection, and intervention—the rhythm through which human engagement with any complex system deepens over time.
 
+```mermaid
+flowchart LR
+    R("Retrospective\nWhat happened?") -->|"Understanding\ninforms"| P("Predictive\nWhat might happen?")
+    P -->|"Prediction\nguides"| N("Prescriptive\nWhat should be done?")
+    N -->|"Action\ntaken"| A("New Phenomena")
+    A -.->|"creates new\nquestions"| R
+```
+
 Good prompting is not about stacking more words. It is about knowing **what type of question you are actually asking**, and which phase of this cycle you are in.
 
 ### Direction 1: Retrospective (What Has Happened)
@@ -313,7 +321,19 @@ The routing dimension makes the three-direction framework operationally meaningf
 | Predictive | Pattern analysis, trend projection | Forecasting models, statistical engines, time-series tools |
 | Prescriptive | Constraint-aware optimization | Recommendation engines, optimization solvers, planning systems |
 
-In modern LLM systems with tool use and multi-agent architectures, a well-formed prompt doesn't just ask a question—it **routes itself** to the right system. A retrospective query about sensor readings should go to a data store, not rely on model memory. A predictive query should invoke a forecasting model. A prescriptive query should consult a system that knows operational constraints.
+In modern LLM systems with tool use and multi-agent architectures, a well-formed prompt doesn't just ask a question—it **routes itself** to the right system.
+
+```mermaid
+flowchart TD
+    Q[/"Prompt / Utterance"/] --> C{Which direction?}
+    C -->|Retrospective| DB[("Data Sources\nDatabases · Archives · APIs")]
+    C -->|Predictive| FM["Analytical Tools\nForecasting · Statistics · Time-Series"]
+    C -->|Prescriptive| OPT["Decision Systems\nOptimization · Planning · Recommendations"]
+    DB --> LLM(["LLM synthesizes\nand presents"])
+    FM --> LLM
+    OPT --> LLM
+    LLM --> ANS[/"Response"/]
+``` A retrospective query about sensor readings should go to a data store, not rely on model memory. A predictive query should invoke a forecasting model. A prescriptive query should consult a system that knows operational constraints.
 
 **A well-formed prompt, then, is not only a well-structured question—it is a question directed to the right tool.** Knowing what kind of answer you need (and who or what can actually provide it) is as important as knowing how to ask.
 
@@ -343,6 +363,19 @@ The first response tells you as much about your prompt as about the topic:
 **Reframe**: If the response answered the wrong question, restate what you actually needed. "I wasn't asking about A; I was asking about B given C."
 
 **Escalate specificity**: "Give me three concrete examples" or "Quantify this where possible."
+
+```mermaid
+flowchart LR
+    A(["Form Prompt"]) --> B["Submit"]
+    B --> C["Read Response"]
+    C --> D{"Evaluate"}
+    D -->|"Mixed directions"| E["Decompose"]
+    D -->|"Too broad"| F["Narrow scope"]
+    D -->|"Overconfident"| G["Challenge"]
+    D -->|"Wrong question"| H["Reframe"]
+    E & F & G & H --> A
+    D -->|"Sufficient"| I(["Done ✓"])
+```
 
 ### Iteration Is Not Failure
 
