@@ -1,4 +1,4 @@
-# How to Ask an AI: A Practical Guide for Everyday Use
+# Just Ask Right
 
 A simple, practical guide to getting better answers from AI tools — no technical background needed.
 

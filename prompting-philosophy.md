@@ -1,4 +1,4 @@
-# How to Ask Large Language Models: A Philosophical Inquiry from Knowledge and Judgment to Responsibility
+# The Art of the Question
 
 A teaching guide exploring the principles of effective prompting—and what it reveals about how we think.
 
