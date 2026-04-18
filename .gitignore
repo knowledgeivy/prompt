@@ -221,6 +221,7 @@ Thumbs.db
 *.swp
 *.tmp
 *~
+temp/
 
 # Environment files if you happen to use them
 .env
