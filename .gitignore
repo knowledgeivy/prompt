@@ -205,3 +205,22 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*.tmp
+*~
+
+# Environment files if you happen to use them
+.env
