@@ -8,8 +8,8 @@ A teaching guide exploring the principles of effective prompting—and what it r
 
 1. [Why We Use Large Language Models](#why-we-use-large-language-models)
 2. [Why We Must Relearn How to Ask](#why-we-must-relearn-how-to-ask)
-3. [What a Large Language Model Is Actually Doing](#what-a-large-language-model-is-actually-doing)
-4. [The Three Fundamental Directions](#the-three-fundamental-directions)
+3. [The Three Fundamental Directions](#the-three-fundamental-directions)
+4. [What a Large Language Model Is Actually Doing](#what-a-large-language-model-is-actually-doing)
 5. [Questions Are Not Neutral](#questions-are-not-neutral)
 6. [What Makes a Good Prompt](#what-makes-a-good-prompt)
 7. [Language Quality: Grammar, Semantics, and Representation](#language-quality-grammar-semantics-and-representation)
@@ -48,27 +48,6 @@ Language models thus become mirrors. They reflect not the reality we're asking a
 
 ---
 
-## What a Large Language Model Is Actually Doing
-
-Language models appear to answer questions, but not because they directly perceive reality or inherently possess truth.
-
-Their core mechanism: **learn statistical patterns from text, then predict what is most likely to come next.**
-
-They are fundamentally **probabilistic language prediction systems**—and only secondarily do they appear to understand, explain, reason, or create.
-
-This means:
-- An answer from a model is often a high-probability output in language space
-- It may be useful, fluent, and close to reality
-- But it is not identical with reality itself
-
-### Why This Distinction Matters
-
-This is not a technical caveat to mention and move past. It is the foundation of responsible engagement with these systems. A language model operates in the realm of **what is expressible, coherent, and typical**—not the realm of **what is true**. These overlap but are not identical.
-
-Understanding this gap is crucial because it protects you from a subtle form of intellectual danger: accepting answers precisely *because* they sound plausible. The more fluent a model's output, the more critical your scrutiny must be.
-
----
-
 ## The Three Fundamental Directions
 
 ### The Universal Logic of Human Inquiry
@@ -83,12 +62,20 @@ These three categories are not arbitrary divisions. They reflect the natural pro
 
 Together, they form a cycle of knowledge, reflection, and intervention—the rhythm through which human engagement with any complex system deepens over time.
 
+This tripartite structure echoes something Aristotle recognized long before AI existed: that human knowing takes irreducibly different forms. *Episteme*—theoretical or scientific knowledge—is concerned with what is and why; it is the knowledge that holds universally and can be demonstrated. *Phronesis*—practical wisdom—is the capacity to discern what ought to be done in particular circumstances, weighing values and constraints that no formula can fully capture. The progression from retrospective inquiry through prediction to prescriptive judgment is, in miniature, the movement from episteme toward phronesis.
+
+Hans-Georg Gadamer described understanding as a *hermeneutic circle*: we cannot grasp the whole without engaging the parts, and we cannot read the parts without some anticipation of the whole. The interpreter's horizon—shaped by prior understanding, culture, and experience—is never absent from the act of inquiry. The knowledge cycle below is the hermeneutic circle in practical form: each act of understanding shifts our horizon, opening new questions that could not have been articulated before.
+
 ```mermaid
 flowchart LR
-    R("Retrospective\nWhat happened?") -->|"Understanding\ninforms"| P("Predictive\nWhat might happen?")
-    P -->|"Prediction\nguides"| N("Prescriptive\nWhat should be done?")
-    N -->|"Action\ntaken"| A("New Phenomena")
-    A -.->|"creates new\nquestions"| R
+    R("Retrospective<br/>What happened?") -->|"Understanding<br/>informs"| P("Predictive<br/>What might happen?")
+    P -->|"Prediction<br/>guides"| N("Prescriptive<br/>What should be done?")
+    N -->|"Action<br/>taken"| A("New Phenomena")
+    A -.->|"creates new<br/>questions"| R
+    style R text-align:center
+    style P text-align:center
+    style N text-align:center
+    style A text-align:center
 ```
 
 Good prompting is not about stacking more words. It is about knowing **what type of question you are actually asking**, and which phase of this cycle you are in.
@@ -111,6 +98,8 @@ The predictive lens extends knowledge into the future through **informed inferen
 
 The prescriptive lens is about **translating knowledge into will**. It is where understanding meets responsibility. Prescriptive questions do not merely ask what is true or what will happen—they ask what *should* happen given our values, constraints, and goals. This is the realm of decision, judgment, and agency. These questions acknowledge that multiple futures are possible, and our choices shape which one unfolds.
 
+Hume's insight applies here with full force: the prescriptive is irreducibly normative. No model, however capable, can derive what you *should* do from facts alone without value premises that only you can supply. When a model offers recommendations, it is—knowingly or not—importing value assumptions. Your task is to make those assumptions visible and judge whether they are yours.
+
 ### Why Separation Matters
 
 Many people write prompts by stuffing in everything at once—facts, opinions, predictions, and recommendations all tangled together. Length is not the problem. **Mixing directions is the problem.**
@@ -127,6 +116,110 @@ This conflates retrospective facts, explanatory analysis, predictive reasoning, 
 4. **Normative**: Under what value standard would someone consider it a success or failure?
 
 **The discipline is to separate them**—not because the model requires it, but because *you* require it to think clearly.
+
+---
+
+## What a Large Language Model Is Actually Doing
+
+Language models appear to answer questions, but not because they directly perceive reality or inherently possess truth.
+
+Their core mechanism: **learn statistical patterns from text, then predict what is most likely to come next.**
+
+They are fundamentally **probabilistic language prediction systems**—and only secondarily do they appear to understand, explain, reason, or create.
+
+This means:
+- An answer from a model is often a high-probability output in language space
+- It may be useful, fluent, and close to reality
+- But it is not identical with reality itself
+
+### Why This Distinction Matters
+
+This is not a technical caveat to mention and move past. It is the foundation of responsible engagement with these systems. A language model operates in the realm of **what is expressible, coherent, and typical**—not the realm of **what is true**. These overlap but are not identical.
+
+Understanding this gap is crucial because it protects you from a subtle form of intellectual danger: accepting answers precisely *because* they sound plausible. The more fluent a model's output, the more critical your scrutiny must be.
+
+### Where Answers Come From
+
+This is one of the most important questions to ask when working with language models. LLM answers can draw from four distinct sources—each with different reliability, timeliness, and hallucination risk.
+
+```mermaid
+flowchart TD
+    classDef high fill:#ffcccc,stroke:#cc3333,color:#000
+    classDef medium fill:#fff0cc,stroke:#cc8800,color:#000
+    classDef low fill:#ccf0cc,stroke:#336633,color:#000
+    classDef vlow fill:#cce8ff,stroke:#0066cc,color:#000
+
+    A["LLM Answer"] --> B["Parametric<br/>Trained weights &amp; patterns<br/>⚠ Hallucination: High"]
+    A --> C["Contextual<br/>User-provided content<br/>✓ Hallucination: Low"]
+    A --> D["Retrieved"]
+    A --> E["Computed"]
+    D --> D1["Web Search<br/>Open internet, real-time<br/>~ Hallucination: Medium"]
+    D --> D2["RAG<br/>Curated knowledge bases<br/>✓ Hallucination: Low–Medium"]
+    E --> E1["Tool Calls<br/>Calculators, code, maps<br/>✓ Hallucination: Very Low"]
+    E --> E2["System Calls<br/>Databases, APIs<br/>✓ Hallucination: Very Low"]
+
+    class B high
+    class C low
+    class D1 medium
+    class D2 low
+    class E1 vlow
+    class E2 vlow
+
+    style A text-align:center
+    style B text-align:center
+    style C text-align:center
+    style D text-align:center
+    style E text-align:center
+    style D1 text-align:center
+    style D2 text-align:center
+    style E1 text-align:center
+    style E2 text-align:center
+```
+
+**Parametric — the model's internally learned knowledge and language patterns.**
+During training, the model is exposed to vast amounts of text and compresses patterns, associations, and common expressions into its parameters. When you ask a question, it predicts the most reasonable continuation based on context.
+
+*Hallucination risk: **High.*** The model generates from statistical probability, not verified fact. It may confidently produce incorrect names, dates, citations, or statistics—especially near its knowledge cutoff, for niche topics, or when asked for precise figures. This is the highest-risk source because there is no external ground truth to constrain the output. *An LLM relying solely on parametric knowledge has the highest likelihood of hallucination.*
+
+**Contextual — information you supply directly in the prompt.**
+Documents, data, examples, or facts pasted into the prompt itself. You know their provenance, recency, and accuracy—and the model has them directly in its context window.
+
+*Hallucination risk: **Low.*** The model can be anchored to the provided content. It may still misread, selectively quote, or add details not present in the material—but grounded prompting significantly reduces fabrication. *This is why providing your own sources is one of the most effective defenses against hallucination.*
+
+**Retrieved — information fetched from external sources.**
+
+- *Web search* — searches the open internet for up-to-date information. Well-suited for real-time questions: current news, prices, recent policy changes.
+
+  *Hallucination risk: **Medium.*** Retrieved content anchors the response, but the model may misquote, misattribute, or blend sources. The internet itself contains inaccurate or biased content. *Without web search, LLM alone has very high risk for any post-cutoff or real-time information.*
+
+- *RAG (Retrieval-Augmented Generation)* — queries a curated, domain-specific corpus: company documents, internal knowledge bases, proprietary datasets, vector-indexed archives.
+
+  *Hallucination risk: **Low–Medium.*** Curated content substantially reduces risk, but the model may still generate beyond what the retrieved passages actually say—hallucinating in the gaps. *Without RAG, LLM alone has high risk for proprietary or domain-specific knowledge absent from training data.*
+
+**Computed — results produced by invoking external tools or systems.**
+
+- *Tool calls* — calculators, code execution engines, map services, charting tools. The computation itself is deterministic.
+
+  *Hallucination risk: **Very Low** (for the result). Risk lies in the setup—wrong formula, wrong inputs, misunderstood question—before the tool is invoked. *Without tool calls, LLM alone has high risk for any precise calculation or deterministic computation.*
+
+- *System calls* — databases, APIs, enterprise systems for live operational data.
+
+  *Hallucination risk: **Very Low** (for data retrieval). Live data is authoritative. Risk lies in interpreting or synthesizing the results. *Without system access, LLM alone cannot know the current state of any live system or record.*
+
+In both computed cases, the model acts as an **orchestrator that understands the question and routes it to the right tool**—not a memory bank answering from recall.
+
+### Hallucination Risk Summary
+
+| Source | Hallucination Risk | LLM Alone |
+|---|---|---|
+| Parametric | ⚠ High | Highest risk — no external grounding |
+| Contextual | ✓ Low | Low — if content is provided |
+| Web Search | ~ Medium | Very high without retrieval |
+| RAG | ✓ Low–Medium | High without curated knowledge base |
+| Tool Calls | ✓ Very Low | High for precise computation |
+| System Calls | ✓ Very Low | Cannot access live data at all |
+
+**In essence, the more an answer depends on parametric knowledge alone, the higher the hallucination risk.** The most reliable answers combine contextual grounding with the right retrieval or computation tool—leaving the model to do what it does best: understand, synthesize, and explain.
 
 ---
 
@@ -162,6 +255,8 @@ Questions are not neutral because language itself is not neutral. Every question
 - What outcomes matter
 
 A political question disguises philosophical commitments. An economic forecast hides assumptions about rationality. A historical judgment carries value premises about human nature. When you ask a language model anything, you are exporting these assumptions—often without acknowledging them.
+
+Ludwig Wittgenstein observed: *"The limits of my language mean the limits of my world."* The conceptual categories your language provides are the only tools available for articulating your questions. If your language lacks the concepts to distinguish causation from correlation, or temporal change from logical implication, you cannot ask about those distinctions—and neither can the model discover them for you. Questions do not merely reflect thought; they constitute and constrain it. The quality of your inquiry is bounded, ultimately, by the quality of your conceptual vocabulary.
 
 The discipline of careful questioning is thus a discipline of **making visible what is hidden in your own thinking**.
 
@@ -277,6 +372,16 @@ The machine's hallucination is more visible, more often exposed, more measurable
 
 This is why learning to prompt well is, paradoxically, also learning to think better as a human.
 
+### The Cave and the Mirror
+
+Plato's allegory of the cave describes prisoners who have spent their lives watching shadows cast on a wall. Having never seen real objects, they take the shadows for reality—they name them, argue about them, develop sophisticated theories of their behavior. Fluency about shadows becomes the only available standard for knowledge.
+
+A language model trained on text is, in a precise sense, trained on shadows: the linguistic expressions of human thought, not the underlying objects of thought. It learns the statistical shape of how ideas, facts, and arguments appear in language—which makes it extraordinarily fluent in the shadow-world of expression. When it generates an answer, it produces something that *looks like* a credible answer in the space of linguistic patterns. It is not accessing the underlying reality those patterns point toward.
+
+The danger is not that the model is deceptive. It is that the shadows can be vivid, internally consistent, and stylistically authoritative. A well-formed hallucination is epistemically dangerous precisely because it does not look like a hallucination. The sophistication of the output is what makes uncritical acceptance so seductive.
+
+The antidote, as Plato suggested, is to *turn toward the source of light*—to seek grounding in verified sources, lived experience, and direct access to evidence. Contextual grounding, tool calls, and retrieved data dramatically reduce hallucination because they reconnect the model's outputs to objects in the world, not just to patterns in the shadow-space of language.
+
 ---
 
 ## Responsible Use
@@ -326,14 +431,20 @@ In modern LLM systems with tool use and multi-agent architectures, a well-formed
 ```mermaid
 flowchart TD
     Q[/"Prompt / Utterance"/] --> C{Which direction?}
-    C -->|Retrospective| DB[("Data Sources\nDatabases · Archives · APIs")]
-    C -->|Predictive| FM["Analytical Tools\nForecasting · Statistics · Time-Series"]
-    C -->|Prescriptive| OPT["Decision Systems\nOptimization · Planning · Recommendations"]
-    DB --> LLM(["LLM synthesizes\nand presents"])
+    C -->|Retrospective| DB[("Data Sources<br/>Databases, Archives, APIs")]
+    C -->|Predictive| FM["Analytical Tools<br/>Forecasting, Statistics, Time-Series"]
+    C -->|Prescriptive| OPT["Decision Systems<br/>Optimization, Planning, Recommendations"]
+    DB --> LLM(["LLM synthesizes<br/>and presents"])
     FM --> LLM
     OPT --> LLM
     LLM --> ANS[/"Response"/]
-``` A retrospective query about sensor readings should go to a data store, not rely on model memory. A predictive query should invoke a forecasting model. A prescriptive query should consult a system that knows operational constraints.
+    style DB text-align:center
+    style FM text-align:center
+    style OPT text-align:center
+    style LLM text-align:center
+```
+
+A retrospective query about sensor readings should go to a data store, not rely on model memory. A predictive query should invoke a forecasting model. A prescriptive query should consult a system that knows operational constraints.
 
 **A well-formed prompt, then, is not only a well-structured question—it is a question directed to the right tool.** Knowing what kind of answer you need (and who or what can actually provide it) is as important as knowing how to ask.
 
@@ -436,6 +547,8 @@ A mature questioner should be able to ask themselves:
 **A language model is not an oracle, a judge, or a shortcut that replaces thinking.**
 
 Think of it as a mirror made of language and probability. The way you ask shapes how it reflects. The way you structure language shapes how it responds. The way you handle fact, standpoint, and reason—that is what it amplifies back.
+
+The philosopher most associated with the discipline of questioning was Socrates, who claimed to know only that he did not know. His method—the *elenchus*, or cross-examination—was not designed to deliver answers but to surface the hidden structure of what his interlocutors already believed, and where their beliefs dissolved under scrutiny. The Socratic insight was that genuine understanding cannot be simply transferred; it must be elicited through the discipline of honest inquiry. A language model, used well, can play a version of this role—not by supplying truth, but by revealing the shape of what you actually think, and exposing the cracks. This is why learning to prompt well is, ultimately, an exercise in the Socratic tradition: not asking how to extract answers from an external authority, but learning to interrogate your own questions until they are worthy of answering.
 
 **True prompt engineering is not making machines more like humans. It is making humans more precise, more honest, more disciplined.**
 
