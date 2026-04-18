@@ -1,4 +1,4 @@
-# How to Ask Large Language Models: From Language and Knowledge to Responsibility
+# How to Ask Large Language Models: A Philosophical Inquiry from Knowledge and Judgment to Responsibility
 
 A teaching guide exploring the principles of effective prompting—and what it reveals about how we think.
 
@@ -23,13 +23,15 @@ A teaching guide exploring the principles of effective prompting—and what it r
 
 ## Why We Must Relearn How to Ask
 
-Language models now serve as research assistants, writing aids, and thinking partners. People turn to them to understand news, analyze trends, explore history, organize arguments, and generate recommendations.
+Today, more and more people are turning to large language models as work assistants, learning companions, even a kind of "extended mind." They ask it to help understand the news, analyze economies, revisit history, organize ideas, generate text, and offer advice. A question emerges that looks deceptively simple: **How, exactly, should we ask?**
 
-A seemingly simple question emerges: **How should we ask?**
+On the surface, this seems like a Prompt Engineering problem—can we just write better, more detailed, more "professional" prompts? But on closer reflection, it is not only technical. **It is first a question of language, then a question of knowledge, and finally a question of responsibility.**
 
-At first glance, this looks like a technical problem—does a longer, more detailed prompt simply yield better answers?
+### Prompting as a Projection of Thought
 
-But on closer reflection, it is not only technical. **It is first a linguistic problem, then an epistemological problem, and finally one of responsibility.**
+When a person asks a question to a language model, they are not merely inputting a string of words. They are **entrusting the system with their intentions, assumptions, standpoints, knowledge boundaries, and cognitive habits all at once**. A prompt, on the surface, is a sentence—but at a deeper level, it is a projection of a way of thinking. How we ask does not only determine how the machine responds; it determines how we ourselves will come to understand the world.
+
+Language models thus become mirrors. They reflect not the reality we're asking about, but the quality of our own inquiry. This is why learning to prompt well is not optional refinement—it is an act of intellectual discipline that sharpens how we understand anything, with or without AI.
 
 ---
 
@@ -45,6 +47,12 @@ This means:
 - An answer from a model is often a high-probability output in language space
 - It may be useful, fluent, and close to reality
 - But it is not identical with reality itself
+
+### Why This Distinction Matters
+
+This is not a technical caveat to mention and move past. It is the foundation of responsible engagement with these systems. A language model operates in the realm of **what is expressible, coherent, and typical**—not the realm of **what is true**. These overlap but are not identical.
+
+Understanding this gap is crucial because it protects you from a subtle form of intellectual danger: accepting answers precisely *because* they sound plausible. The more fluent a model's output, the more critical your scrutiny must be.
 
 ---
 
@@ -70,6 +78,28 @@ Not all questions are of the same kind. The same topic can be approached at diff
 - "What if events had unfolded differently?" → counterfactual reasoning
 
 **A mature questioner first knows what they're actually asking for: facts, explanation, prediction, or advice.**
+
+### Three Fundamental Directions
+
+Though all appear to be "asking questions," questions operate at fundamentally different levels. At minimum, three directions exist:
+
+- **Retrospective questions**: What has happened? What do we already know?
+- **Predictive questions**: What might happen next?
+- **Normative (prescriptive) questions**: What should we do?
+
+These three directions are related, but they are not the same. They each demand different kinds of evidence, different logic, different tone, and different response forms. When mixed together in a single prompt, a language model will often produce something fluent but incoherent.
+
+### The Ontology of Inquiry
+
+Questions are not neutral because language itself is not neutral. Every question you ask carries embedded assumptions about:
+- What counts as evidence
+- Which perspectives are legitimate
+- What boundaries separate one topic from another
+- What outcomes matter
+
+A political question disguises philosophical commitments. An economic forecast hides assumptions about rationality. A historical judgment carries value premises about human nature. When you ask a language model anything, you are exporting these assumptions—often without acknowledging them.
+
+The discipline of careful questioning is thus a discipline of **making visible what is hidden in your own thinking**.
 
 ---
 
@@ -101,6 +131,12 @@ Grammar is not decoration. It encodes relationships:
 - What is central vs. merely contextual
 
 **When grammar is unclear, the model must infer missing information.** The more it guesses, the more likely it produces something linguistically plausible but misaligned with your intent.
+
+A complete, precise, well-structured prompt is not "more elegant"—it provides the model with more reliable task constraints. One principle worth holding onto:
+
+> **Grammar determines relationships. Semantics determines boundaries. Structure determines the path of reasoning.**
+
+A prompt riddled with grammatical gaps, vague concepts, and logical leaps essentially pushes the model toward guessing. The more it fills in blanks, the higher the probability of hallucination.
 
 ### Why this matters in training
 
@@ -173,6 +209,22 @@ If your question is poorly defined, evidence is insufficient, or semantic bounda
 
 **Hallucination is not only a machine-side problem—it is often a problem of how the question was framed.**
 
+Consider:
+
+- "Summarize the truth about today's political situation"—but no credible sources are provided. The question itself is already ill-defined.
+- "Is this politician a complete liar?"—you've compressed complex facts into a moral verdict.
+- "Will the economy definitely collapse in three months?"—you're demanding certainty from an uncertain system.
+
+In each case, even if the model responds fluently, it may simply be following the implicit suggestions in your language to generate a seemingly coherent narrative. **The real danger is not only that models hallucinate—it's that people are willing to accept hallucinations that confirm their existing beliefs.**
+
+### The Deeper Truth About Hallucination
+
+Hallucination reveals something uncomfortable: **humans and language models share the same fundamental vulnerability.** When we encounter ambiguous, underdetermined questions, humans also confabulate—we fill gaps with what is culturally typical, emotionally resonant, or narratively satisfying, often without realizing we are doing so.
+
+The machine's hallucination is more visible, more often exposed, more measurable. But it is not fundamentally different in kind from human reasoning in the presence of incomplete information.
+
+This is why learning to prompt well is, paradoxically, also learning to think better as a human. The discipline of precision that you impose on your prompts is the same discipline that shields your own thinking from unconscious bias and unexamined assumption.
+
 ---
 
 ## Responsible Use
@@ -186,25 +238,68 @@ Common misuses:
 3. **Outsourcing judgment** – "Just tell me who's right without explanation"
 4. **Treating the model as final authority** – No longer checking sources, comparing interpretations, or distinguishing facts from speculation
 
+### The Ethics of Intellectual Honesty
+
+These misuses share something in common: they use the model to **externalize responsibility**. You no longer have to own your reasoning—the model does it for you. You no longer have to sit with uncertainty—the model provides confident answers. You no longer have to make judgments—the model judges for you.
+
+But this is self-deception. The model cannot bear responsibility; only you can. When you misuse a language model, you are not deceiving the model—you are deceiving yourself and, by extension, others who trust your judgment.
+
+Responsible use requires the opposite posture: **taking fuller responsibility for your own thinking by being more honest about what you know, what you don't know, and where you are uncertain.** Language models can be tools in that project—but only if you refuse to let them become substitutes for judgment.
+
 ---
 
-## A Layered Approach to Prompting
+## A Layered Approach to Prompting: The Three Fundamental Directions
 
-Convert complex questions into a disciplined sequence:
+### The Universal Logic of Human Inquiry
 
-### Layer 1: Facts
-What information is relatively stable and verifiable?
+Human inquiry about complex systems follows a universal logic that transcends domain boundaries. Whether investigating a patient's condition, a machine's failure, or a market's behavior, humans ask the same fundamental questions in the same sequence.
 
-### Layer 2: Explanation
-How do different perspectives interpret these facts? What are they based on?
+The three categories below are not arbitrary divisions. They reflect the natural progression of how knowledge accumulates and how wisdom unfolds:
 
-### Layer 3: Prediction
-If conditions continue, what different outcomes might emerge?
+1. **Understanding** precedes **prediction**
+2. **Prediction** informs **action**
+3. **Action** creates new phenomena to understand
 
-### Layer 4: Advice
-Given different goals and constraints, what should be done?
+Together, they form a cycle of knowledge, reflection, and intervention—the rhythm through which human engagement with any complex system deepens over time.
 
-This separation **reduces confusion and ambiguity.**
+Good prompting is not about stacking more words. It is about knowing **what type of question you are actually asking**, and which phase of this cycle you are in.
+
+Break complex questions into a disciplined sequence:
+
+### Layer 1: Retrospective (What Has Happened)
+What information is relatively stable and verifiable? What actually happened? What do we already know?  
+*Standard: Correspondence to observable reality*
+
+The retrospective lens is about **establishing ground truth**. Before we can predict the future or prescribe action, we must understand what we know about the present and past. This is the foundation of all reasoning—the empirical bedrock upon which confidence is built. Retrospective questions ask: "What does the evidence tell us?" They are acts of epistemological humility: acknowledging what we can verify and distinguishing it from what we must infer.
+
+### Layer 2: Predictive (What Might Happen)
+If conditions continue, what different outcomes might emerge? What patterns can we project forward?  
+*Standard: Consistency with historical patterns and causal logic*
+
+The predictive lens extends knowledge into the future through **informed inference**. Prediction is not about achieving certainty—it is about quantifying uncertainty and identifying trajectories. It reflects the human desire to anticipate, to prepare, to shift from reactive to proactive. Predictive questions acknowledge that the future is shaped by patterns already observed; they are acts of pattern recognition extended through time.
+
+### Layer 3: Normative / Prescriptive (What Should Be Done)
+Given different goals and constraints, what should be done? What actions would be optimal?  
+*Standard: Alignment with values, feasibility, and desired outcomes*
+
+The prescriptive lens is about **translating knowledge into will**. It is where understanding meets responsibility. Prescriptive questions do not merely ask what is true or what will happen—they ask what *should* happen given our values, constraints, and goals. This is the realm of decision, judgment, and agency. These questions acknowledge that multiple futures are possible, and our choices shape which one unfolds.
+
+### Why Separation Matters
+
+Many people write prompts by stuffing in everything at once—facts, opinions, predictions, and recommendations all tangled together. Length is not the problem. **Mixing layers is the problem.**
+
+For example, in political news, the temptation is to ask:
+
+> "Tell me whether this policy is good or bad, whether it will fail, and whether the media is biased—and explain it all."
+
+This conflates retrospective facts, explanatory analysis, predictive reasoning, and value judgments. Better to separate:
+
+1. **Retrospective**: What are the main contents of this policy?
+2. **Explanatory**: What are the core arguments from supporters and critics?
+3. **Predictive**: What different outcomes might emerge short-term and long-term?
+4. **Normative**: Under what value standard would someone consider it a success or failure?
+
+**The discipline is to separate them**—not because the model requires it, but because *you* require it to think clearly. Language models simply make the confusion visible when it happens.
 
 ---
 
@@ -242,18 +337,27 @@ This separation **reduces confusion and ambiguity.**
 
 ---
 
-## Conclusion: Prompting as Self-Discipline
+## Conclusion: Asking a Model Trains You
 
-Learning to use language models is not merely learning a new tool.
+At a deeper level, learning to use large language models is not merely learning a new tool. It is relearning how to ask, how to express, and how to think.
 
-It is relearning:
-- How to ask questions clearly
-- How to distinguish facts from judgment
-- How to reduce ambiguity in language
-- How to avoid disguising bias as intelligent output
+A mature questioner should be able to ask themselves:
 
-**A language model is not an oracle, judge, or shortcut that replaces thinking.**
+- Do I want facts, explanations, or recommendations right now?
+- Is there a reliable source this question can be anchored to?
+- Is my question itself carrying hidden biases?
+- Have I mixed multiple layers of inquiry into one sentence?
+- Is my language clear enough for another intelligence to genuinely understand my intent?
+- Am I prepared to keep asking, rather than accepting the first answer that sounds right?
 
-Think of it as a mirror made of language and probability. The way you ask shapes how it reflects. The way you structure language shapes how it responds. The way you handle fact, bias, and reasoning amplifies these in the output.
+**A language model is not an oracle, a judge, or a shortcut that replaces thinking.**
 
-**True prompt engineering is not making machines more human. It is making humans more precise, more honest, and more disciplined.**
+Think of it as a mirror made of language and probability. The way you ask shapes how it reflects. The way you structure language shapes how it responds. The way you handle fact, standpoint, and reason—that is what it amplifies back.
+
+**True prompt engineering is not making machines more like humans. It is making humans more precise, more honest, more disciplined.**
+
+So perhaps the most important question is not: "How do I get the AI to understand me?"
+
+It is:
+
+> **Have I first thought through my own question?**
