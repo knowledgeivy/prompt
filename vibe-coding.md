@@ -15,11 +15,13 @@ A practical guide for building large software systems with AI assistance through
 3. [Core Principles](#core-principles)
 
 **Architecture & Structure**
+
 4. [Architecture Before You Vibe](#architecture-before-you-vibe)
 5. [Structuring Projects for AI Assistance](#structuring-projects-for-ai-assistance)
 6. [Component Separation & Clean APIs](#component-separation--clean-apis)
 
 **Practical Techniques**
+
 7. [Exploring Multiple Implementation Options](#exploring-multiple-implementation-options)
 8. [Prompting Patterns for Code](#prompting-patterns-for-code)
 9. [Incremental Development](#incremental-development)
@@ -27,11 +29,13 @@ A practical guide for building large software systems with AI assistance through
 11. [Session Management](#session-management)
 
 **Quality & Safety**
+
 12. [Backup & Plan-Review-Implement](#backup--plan-review-implement)
 13. [Quality Control and Code Review](#quality-control-and-code-review)
 14. [Iterative Workflow](#iterative-workflow)
 
 **Team & Scale**
+
 15. [Team Practices](#team-practices)
 16. [Common Pitfalls](#common-pitfalls)
 17. [What Scales, What Doesn't](#what-scales-what-doesnt)
